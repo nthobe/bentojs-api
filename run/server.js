@@ -67,7 +67,7 @@ function *master() {
   }
 
   cluster.on('exit', function(worker, signal) {
-    log.error('Worker %s was killed by signal: %s', worker, signal);
+    log.error(`Worker ${ worker } was killed by signal: ${ signal }`);
   });
 }
 
