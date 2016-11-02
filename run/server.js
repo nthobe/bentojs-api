@@ -68,6 +68,9 @@ function *master() {
 
   cluster.on('exit', function(worker, signal) {
     log.error(`Worker ${ worker } was killed by signal: ${ signal }`);
+    var exec = require('child_process').exec;
+    var cmd = '/etc/init.d/node-waivecar restart';
+    exec(cmd, function(error, stdout, stderr) {});
   });
 }
 
