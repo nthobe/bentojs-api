@@ -5,6 +5,7 @@ let path  = require('path');
 let type  = Bento.Helpers.Type;
 let error = Bento.Error;
 let log   = Bento.Log;
+let reqStack = require('require-stack');
 
 module.exports = {
 
@@ -70,7 +71,7 @@ module.exports = {
         continue;
       }
       try {
-        require(path.join(target, file));
+        reqStack(path.join(target, file));
         log.silent('info')(logText.replace('${ target }', target.split('/').pop()));
       } catch (err) {
         error.optional.require(err, file);
@@ -96,7 +97,7 @@ module.exports = {
         }
         try {
           console.log(target, item, path.join(target, item));
-          require(path.join(target, item));
+          reqStack(path.join(target, item));
         } catch (err) {
           error.optional.require(err, path.join(target, item));
         }
