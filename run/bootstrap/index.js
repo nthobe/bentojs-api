@@ -8,8 +8,10 @@ Bento._bootstrap = function *() {
   // ### Share Loader
   // Load API components shared on both master, and worker processes.
 
-  ['./models','./providers','./interface','./hooks']
-    .forEach((row) => (yield require(row))(); );
+  let list = ['./models','./providers','./interface','./hooks'];
+  for(var ix = 0; ix < list.length; ix++) {
+    yield require(list[ix]);
+  }
 
   // ### Worker Loader
   // Load API components for worker processes only.
