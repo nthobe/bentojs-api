@@ -4,7 +4,6 @@ let fs    = require('fs');
 let path  = require('path');
 let app   = require('koa')();
 let log   = Bento.Log;
-const cors = require('@koa/cors');
 
 Bento._app = function *() {
   yield Bento._bootstrap();
@@ -29,6 +28,5 @@ function *startServer() {
 
   yield require('./bootstrap/modules');
 
-  app.use(cors());
   app.listen(Bento.config.api.port);
 }
