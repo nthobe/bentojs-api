@@ -59,7 +59,6 @@ require('./lib/resource');
 require('./lib/interface');
 require('./lib/socket');
 require('./lib/access');
-require('./run/tests');
 require('./run/bootstrap');
 require('./run/server');
 require('./run/app');
