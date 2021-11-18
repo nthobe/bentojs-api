@@ -1,13 +1,8 @@
 {
   "name": "bentojs-api",
   "version": "1.3.2",
-  "keywords": [
-    "bento",
-    "bentojs",
-    "api"
-  ],
+  "description": "library",
   "license": "MIT",
-  "homepage": "https://github.com/bentojs/api-core",
   "repository": "WaiveCar/bentojs-api",
   "dependencies": {
     "@koa/cors": "^3.1.0",
@@ -29,6 +24,5 @@
     "request": ">=2.68.0",
     "require-stack": "^1.0.2",
     "socket.io-emitter": "1.0.0"
-  },
-  "directories": {}
+  }
 }
