@@ -8,6 +8,7 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/bentojs/api-core",
+  "repository": "WaiveCar/bentojs-api",
   "dependencies": {
     "@koa/cors": "^3.1.0",
     "co": "4.6.0",
