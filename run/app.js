@@ -2,8 +2,9 @@
 
 let fs    = require('fs');
 let path  = require('path');
-let app   = require('koa')();
+let Koa   = require('koa');
 let log   = Bento.Log;
+const app = new Koa();
 
 Bento._app = function *() {
   yield Bento._bootstrap();
@@ -28,5 +29,5 @@ function *startServer() {
 
   yield require('./bootstrap/modules');
 
-  app.listen(Bento.config.api.port);
+  app.listen(Bento.config.api.port, "127.0.0.1");
 }
